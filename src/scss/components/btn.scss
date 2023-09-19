@@ -6,7 +6,23 @@
     margin: 0;
     padding: 0;
 
+    font-family: $family;
+
     border: 0;
     background: none;
     cursor: pointer;
+
+    &--md {
+        padding: 20px 57px;
+
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #fff;
+
+        border-radius: 100px;
+    }
+
+    &--orange {
+        background-color: $colors-highlight;
+    }
 }

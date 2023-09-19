@@ -1,9 +1,6 @@
 // normalize css
 @import 'vendor/normalize.scss';
 
-// swiper
-@import 'vendor/swiper-bundle.min.scss';
-
 // vars
 @import 'vars.scss';
 
@@ -67,13 +64,11 @@ main {
 
 // components
 @import 'components/btn.scss';
-@import 'components/header.scss';
-@import 'components/footer.scss';
 @import 'components/container.scss';
+@import 'components/header.scss';
+@import 'components/card.scss';
+@import 'components/footer.scss';
 @import 'components/nav.scss';
-@import 'components/burger.scss';
 @import 'components/modal.scss';
-@import 'components/accordion.scss';
-@import 'components/tabs.scss';
 @import 'components/section.scss';
 @import 'components/form.scss';

@@ -6,4 +6,32 @@
 
     &__content {
     }
+
+    &__title {
+        font-size: 3.4rem;
+        font-weight: 600;
+        color: $colors-dark;
+        line-height: 32px;
+
+        margin-bottom: 50px;
+    }
+
+    &--support {
+        .section__content {
+            margin-bottom: 86px;
+
+            .tip {
+                width: fit-content;
+                margin-left: auto;
+                margin-bottom: 20px;
+
+                display: none;
+                align-items: center;
+
+                @media (max-width: 420px) {
+                    display: flex;
+                }
+            }
+        }
+    }
 }

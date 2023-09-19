@@ -1,0 +1,86 @@
+.card {
+    & + & {
+        margin-top: 30px;
+    }
+    position: relative;
+
+    padding: 30px 36px 35px;
+
+    border-radius: 20px;
+    background-color: #fff;
+
+    background-repeat: no-repeat;
+
+    .decor {
+        position: absolute;
+        bottom: -20px;
+        left: 40%;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+
+    &--1 {
+        background-image: url('../img/card/consult.jpg');
+        background-position: right 108px top 50%;
+
+        @media (max-width: $md) {
+            min-height: 440px;
+
+            padding: 38px 14px;
+
+            background-position: left 50% bottom 0;
+            background-size: 246px;
+        }
+    }
+
+    &--2 {
+        background-image: url('../img/card/screen.jpg');
+        background-position: right 74px top 50%;
+
+        @media (max-width: $md) {
+            min-height: 423px;
+
+            padding: 38px 14px;
+
+            background-position: left 50% bottom 0;
+        }
+
+        @media (max-width: $sm) {
+            background-position: left -90px bottom 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 74px;
+
+        font-size: 2.4rem;
+
+        @media (max-width: $md) {
+            margin-bottom: 37px;
+
+            br {
+                display: none;
+            }
+        }
+
+        @media (max-width: $sm) {
+            font-size: 2rem;
+        }
+    }
+
+    &__btn {
+        position: relative;
+
+        .clip {
+            position: absolute;
+            top: -21px;
+            left: 0;
+        }
+
+        @media (max-width: $md) {
+            margin: 0 auto;
+        }
+    }
+}
