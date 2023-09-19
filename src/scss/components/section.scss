@@ -1,4 +1,9 @@
 .section {
+    margin-bottom: 90px;
+
+    @media (max-width: $md) {
+        margin-bottom: 78px;
+    }
     &__inner {
     }
     &__title {
@@ -14,6 +19,32 @@
         line-height: 32px;
 
         margin-bottom: 50px;
+
+        @media (max-width: $md) {
+            margin-bottom: 34px;
+
+            font-size: 2.4rem;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 26px;
+
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2.8rem;
+
+        @media (max-width: $sm) {
+            margin-bottom: 22px;
+
+            font-size: 1.6rem;
+        }
+    }
+    &__text {
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        font-weight: 400;
+        margin-bottom: 18px;
     }
 
     &--support {
@@ -33,5 +64,9 @@
                 }
             }
         }
+    }
+
+    &--policy {
+        margin-bottom: 94px;
     }
 }
