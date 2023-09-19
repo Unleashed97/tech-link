@@ -12,6 +12,8 @@
     background: none;
     cursor: pointer;
 
+    transition: 0.3s linear;
+
     &--md {
         padding: 20px 57px;
 
@@ -24,5 +26,9 @@
 
     &--orange {
         background-color: $colors-highlight;
+
+        &:hover {
+            background-color: darken($colors-highlight, 15%);
+        }
     }
 }
