@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <!-- head include -->
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.min.css" />
+
+    <script defer src="js/script.min.js"></script>
+    <title>Главная</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <!-- modal include -->
+            <div class="modal">
+    <div class="modal__inner">
+        <button class="modal__close">
+            <img src="img/icons/close.svg" alt="закрыть">
+        </button>
+        <h2 class="modal_title">Modal Title</h2>
+        <div class="modal__content">
+            modal content
+        </div>
+    </div>
+</div>
+
+            <!-- header include -->
+            <header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <a href="index.html" class="logo header__logo">
+                <picture>
+                    <source
+                        srcset="img/logo/logo-black.svg"
+                        media="(max-width: 768px)"
+                    />
+                    <img src="img/logo/logo-white.svg" alt="логотип" />
+                </picture>
+            </a>
+
+            <div class="header__content">
+                <div class="header__contact-list">
+                    <div class="header__contact-item">
+                        <img
+                            src="img/icons/tel.svg"
+                            alt="телефон"
+                            class="header__contact-item-icon"
+                        />
+                        <div class="header__contact-item-content">
+                            <a href="tel:+73432887515">+7 (343) 288-75-15</a>
+                            <span>линия консультаций</span>
+                        </div>
+                    </div>
+                    <div class="header__contact-item">
+                        <img
+                            src="img/icons/mail.svg"
+                            alt="почта"
+                            class="header__contact-item-icon"
+                        />
+                        <div class="header__contact-item-content">
+                            <a href="mailto:1c@tlink.ru">1c@tlink.ru</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://tlink.ru/" class="btn header__btn"
+                    >Перейти на основной сайт</a
+                >
+            </div>
+        </div>
+    </div>
+</header>
+
+
+            <!-- main -->
+            <main>
+                <!-- section -->
+                <section class="section">
+                    <div class="container">
+                        <div class="section__inner">
+                            <h2 class="section__title">Title</h2>
+                            <div class="section__content">content</div>
+                        </div>
+                    </div>
+                </section>
+                <!-- end of accordion -->
+
+                <!-- form -->
+                <form action="/" class="form" method="post">
+                    <h2 class="form__title">From title</h2>
+                    <div class="form__group">
+                        <input
+                            type="text"
+                            name="name"
+                            class="form__input"
+                            placeholder="Имя"
+                            required
+                        />
+                    </div>
+                    <div class="form__group">
+                        <input
+                            type="tel"
+                            name="tel"
+                            class="form__input"
+                            placeholder="Телефон"
+                            required
+                        />
+                    </div>
+
+                    <button type="submit" class="btn btn--blue form__btn">
+                        Заказать звонок
+                    </button>
+                </form>
+            </main>
+            <!-- footer include -->
+            <footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <a href="#" class="logo footer__logo"></a>
+
+            <nav class="nav nav--footer">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">link 1</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">link 2</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">link 3</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">link 4</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <!-- head include -->
+    @@include('html/partials/head.html', { "title": "Главная" })
+
+    <body>
+        <div class="wrapper">
+            <!-- modal include -->
+            @@include('html/partials/modal.html')
+
+            <!-- header include -->
+            @@include('html/partials/header.html')
+
+            <!-- main -->
+            <main>
+                <!-- section -->
+                <section class="section">
+                    <div class="container">
+                        <div class="section__inner">
+                            <h2 class="section__title">Title</h2>
+                            <div class="section__content">content</div>
+                        </div>
+                    </div>
+                </section>
+                <!-- end of accordion -->
+
+                <!-- form -->
+                <form action="/" class="form" method="post">
+                    <h2 class="form__title">From title</h2>
+                    <div class="form__group">
+                        <input
+                            type="text"
+                            name="name"
+                            class="form__input"
+                            placeholder="Имя"
+                            required
+                        />
+                    </div>
+                    <div class="form__group">
+                        <input
+                            type="tel"
+                            name="tel"
+                            class="form__input"
+                            placeholder="Телефон"
+                            required
+                        />
+                    </div>
+
+                    <button type="submit" class="btn btn--blue form__btn">
+                        Заказать звонок
+                    </button>
+                </form>
+            </main>
+            <!-- footer include -->
+            @@include('html/partials/footer.html')
+        </div>
+    </body>
+</html>

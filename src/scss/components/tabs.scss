@@ -1,0 +1,35 @@
+.tabs {
+    &__nav {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__nav-item {
+    }
+
+    &__nav-btn {
+        margin: 0;
+        padding: 15px 8px;
+
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: none;
+
+        cursor: pointer;
+        transition: 0.2s linear;
+
+        &.active {
+            background-color: #ccc;
+        }
+    }
+
+    &__content {
+    }
+
+    &__pane {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}

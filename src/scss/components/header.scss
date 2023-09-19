@@ -1,0 +1,123 @@
+.header {
+    grid-area: header;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 15px 20px 15px 40px;
+
+        border-radius: 100px;
+        background-color: $colors-dark;
+
+        @media (max-width: $md) {
+            flex-direction: column;
+            gap: 14px;
+
+            padding: 20px 0 8px;
+
+            border-radius: 0;
+            border-bottom: 1px solid #d9d9d9;
+            background: none;
+        }
+    }
+
+    &__logo {
+        @media (max-width: $lg) {
+            max-width: 100px;
+        }
+        @media (max-width: $lg) {
+            max-width: 100%;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: baseline;
+        gap: 40px;
+
+        @media (max-width: $lg) {
+            gap: 20px;
+        }
+        @media (max-width: $md) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__contact-list {
+        display: flex;
+        align-items: baseline;
+        gap: 40px;
+
+        @media (max-width: $md) {
+            order: 2;
+        }
+    }
+
+    &__contact-item {
+        display: flex;
+        align-items: start;
+        gap: 14px;
+
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: #b4b4b4;
+
+        @media (max-width: $md) {
+            color: $colors-dark;
+        }
+        @media (max-width: $sm) {
+            font-size: 1rem;
+        }
+
+        a {
+            font-weight: 500;
+            font-size: 1.8rem;
+            color: #fff;
+
+            @media (max-width: $md) {
+                color: $colors-dark;
+            }
+            @media (max-width: $sm) {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &__contact-item-icon {
+        margin-top: 3px;
+    }
+
+    &__contact-item-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__btn {
+        padding: 8px 24px;
+
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 25px;
+        color: $colors-dark;
+
+        border-radius: 100px;
+        background-color: $colors-primary;
+
+        @media (max-width: $md) {
+            background-color: #cecece;
+            order: 1;
+        }
+        @media (max-width: $sm) {
+            font-size: 1rem;
+        }
+    }
+}
