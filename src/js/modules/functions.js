@@ -156,6 +156,7 @@ export const handleForm = () => {
 
             function handleDrop(e) {
                 let dt = e.dataTransfer
+
                 files = dt.files
 
                 filePlaceholder.classList.add('hide')
@@ -169,8 +170,6 @@ export const handleForm = () => {
             window.addEventListener('paste', (e) => {
                 fileInput.files = e.clipboardData.files
 
-                console.log(e.clipboardData.files)
-
                 filePlaceholder.classList.add('hide')
                 uploadFiles(fileInput.files)
             })
@@ -183,17 +182,11 @@ export const handleForm = () => {
                     }
                     const blob = await item.getType('image/png')
 
-                    fileInput.files = new File(
-                        URL.createObjectURL(blob),
-                        'filename',
-                    )
+                    files.push(blob)
+
+                    filePlaceholder.classList.add('hide')
+                    uploadFiles(fileInput.files)
                 }
-
-                console.log(clipboardContents)
-                fileInput.files = clipboardContents
-
-                // filePlaceholder.classList.add('hide')
-                // uploadFiles(fileInput.files)
             })
 
             fileInput.addEventListener('change', () => {
@@ -257,7 +250,6 @@ export const handleForm = () => {
                 const input = document.querySelector('.form__file')
                 input.value = ''
 
-                // files.map(file => {})
                 if (files.length) {
                     Promise.all(files.map(makeThumbnail))
                         .then((images) => {
@@ -271,32 +263,6 @@ export const handleForm = () => {
                     filePlaceholder.classList.remove('hide')
                 }
             }
-
-            // function removeFile(e) {
-            //     ;`   `
-            //     console.log(e)
-            // }
-
-            // function uploadFile(files) {
-            //     Object.keys(files).forEach((i) => {
-            //         const file = files[i]
-            //         const reader = new FileReader()
-            //         reader.onload = (e) => {
-            //             filePreview.classList.add('show')
-            //             filePreview.innerHTML += `<div class="image__wrapper">
-            //             <button type="button" class="btn btn-remove-file" onclick="removeFile()">
-            //                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //                     <circle cx="8" cy="8" r="8" fill="#F67F29"/>
-            //                     <path d="M5.17188 10.8284L10.8287 5.17158" stroke="white"/>
-            //                     <path d="M5.17188 5.17157L10.8287 10.8284" stroke="white"/>
-            //                 </svg>
-            //             </button>
-            //             <img src="${e.target.result}" alt="Фото">
-            //         </div>`
-            //         }
-            //         reader.readAsDataURL(file)
-            //     })
-            // }
         }
     }
 }
