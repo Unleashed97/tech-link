@@ -1,4 +1,4 @@
-<div class="modal modal--screen active">
+<div class="modal modal--screen">
     <div class="modal__inner">
         <button class="modal__close">
             <img src="img/icons/close.svg" alt="закрыть" />
@@ -19,7 +19,11 @@
                 <div class="form__group">
                     <span class="form__error">Заполните поле</span>
                     <div class="file">
-                        <label for="screen-file" class="form__label">
+                        <label
+                            for="screen-file"
+                            id="file-label"
+                            class="form__label"
+                        >
                             <input
                                 id="sreen-file"
                                 type="file"
@@ -30,7 +34,7 @@
                                 accept="image/png, image/gif, image/jpeg"
                             />
 
-                            <div class="file__text-block">
+                            <div class="file__content-block">
                                 <img
                                     src="img/icons/img-placeholder.svg"
                                     alt=""
@@ -40,6 +44,8 @@
                                     перетащите сюда
                                 </p>
                             </div>
+
+                            <div class="file__preview"></div>
                         </label>
 
                         <div class="file__controls">
@@ -63,7 +69,7 @@
                             </button>
                             <button
                                 type="button"
-                                class="btn btn--sm btn--dark file__btn-bufer"
+                                class="btn btn--sm btn--dark file__btn-buffer"
                             >
                                 Вставить из буфера обмена
                             </button>
@@ -99,7 +105,7 @@
                         type="submit"
                         class="btn btn--md btn--orange form__btn"
                     >
-                        Оставить
+                        Отправить
                     </button>
 
                     <label for="screen-confirm" class="form__label">

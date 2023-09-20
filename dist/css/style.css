@@ -1019,6 +1019,12 @@ main {
   border: 1px solid transparent;
   background-color: #f3f3f3;
   outline: 0;
+  transition: 0.3s linear;
+}
+.form--consult .form__input.error,
+.form--consult .form__textarea.error, .form--screen .form__input.error,
+.form--screen .form__textarea.error {
+  border-color: #f64229;
 }
 .form--consult .form__input::placeholder,
 .form--consult .form__textarea::placeholder, .form--screen .form__input::placeholder,
@@ -1094,7 +1100,11 @@ main {
   width: 30px;
   background-color: #fff;
   border-radius: 3px;
+  border: 1px solid transparent;
   transition: 0.3s linear;
+}
+.form--consult .form__check-field.error, .form--screen .form__check-field.error {
+  border-color: #f64229;
 }
 .form--consult .form__check:checked ~ .form__check-field, .form--screen .form__check:checked ~ .form__check-field {
   background-color: #f67f29;
@@ -1162,6 +1172,9 @@ main {
   border: 1px solid #989898;
   transition: 0.3s linear;
 }
+.form--consult .form__group--btn .form__check-field.error, .form--screen .form__group--btn .form__check-field.error {
+  border-color: #f64229;
+}
 .form--consult .form__group--btn .form__check:checked ~ .form__check-field, .form--screen .form__group--btn .form__check:checked ~ .form__check-field {
   background-color: #f67f29;
   border-color: #f67f29;
@@ -1185,9 +1198,11 @@ main {
 }
 .form .file .form__label {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
   min-height: 162px;
+  height: auto;
   border: 1px solid #c5c5c5;
   border-radius: 10px;
   background-color: #fff;
@@ -1202,7 +1217,7 @@ main {
   font-size: 0;
   cursor: pointer;
 }
-.form .file .file__text-block {
+.form .file .file__content-block {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1210,19 +1225,56 @@ main {
   width: 100%;
   height: 100%;
 }
-.form .file .file__text-block img {
+.form .file .file__content-block.hide {
+  display: none;
+}
+.form .file .file__content-block img {
   display: block;
   max-width: 100%;
   height: auto;
 }
-.form .file .file__text-block p {
+.form .file .file__content-block p {
   font-size: 1.6rem;
   color: #9f9f9f;
   text-align: center;
 }
 @media (max-width: 576px) {
-  .form .file .file__text-block p {
+  .form .file .file__content-block p {
     font-size: 1.4rem;
+  }
+}
+.form .file .file__preview {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  display: none;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+.form .file .file__preview.show {
+  display: flex;
+}
+.form .file .file__preview .image__wrapper {
+  position: relative;
+}
+.form .file .file__preview .image__wrapper .btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+.form .file .file__preview .image__wrapper img {
+  display: block;
+  width: 108px;
+  height: 108px;
+}
+@media (max-width: 576px) {
+  .form .file .file__preview .image__wrapper img {
+    width: 88px;
+    height: 88px;
   }
 }
 .form .file__controls {
