@@ -6,7 +6,9 @@
     <body>
         <div class="wrapper">
             <!-- modal include -->
-            @@include('html/partials/modal.html')
+            @@include('html/partials/modal-consult.html')
+            <!-- modal include -->
+            @@include('html/partials/modal-screen.html')
 
             <!-- header include -->
             @@include('html/partials/header.html')
@@ -49,7 +51,8 @@
 
                                     <button
                                         type="button"
-                                        class="btn btn--orange btn--md card__btn"
+                                        data-target="modal--consult"
+                                        class="btn btn--orange btn--md card__btn modal-open-btn"
                                     >
                                         Оставить заявку
                                     </button>
@@ -69,7 +72,8 @@
 
                                     <button
                                         type="button"
-                                        class="btn btn--orange btn--md card__btn"
+                                        data-target="modal--screen"
+                                        class="btn btn--orange btn--md card__btn modal-open-btn"
                                     >
                                         <img
                                             src="img/icons/clip-btn.svg"
@@ -84,33 +88,6 @@
                         </div>
                     </div>
                 </section>
-
-                <!-- form -->
-                <form action="/" class="form" method="post">
-                    <h2 class="form__title">From title</h2>
-                    <div class="form__group">
-                        <input
-                            type="text"
-                            name="name"
-                            class="form__input"
-                            placeholder="Имя"
-                            required
-                        />
-                    </div>
-                    <div class="form__group">
-                        <input
-                            type="tel"
-                            name="tel"
-                            class="form__input"
-                            placeholder="Телефон"
-                            required
-                        />
-                    </div>
-
-                    <button type="submit" class="btn btn--blue form__btn">
-                        Заказать звонок
-                    </button>
-                </form>
             </main>
             <!-- footer include -->
             @@include('html/partials/footer.html')

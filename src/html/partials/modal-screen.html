@@ -1,0 +1,124 @@
+<div class="modal modal--screen active">
+    <div class="modal__inner">
+        <button class="modal__close">
+            <img src="img/icons/close.svg" alt="закрыть" />
+        </button>
+        <header class="modal__header">
+            <h2 class="modal__title">Отправка снимка из буфера</h2>
+        </header>
+        <div class="modal__content">
+            <form action="/" method="post" class="form form--screen">
+                <div class="form__group">
+                    <p>Добавьте комментарий к снимку</p>
+                    <textarea
+                        name="comment"
+                        class="form__textarea"
+                        placeholder="Добавьте комментарий к снимку"
+                    ></textarea>
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <div class="file">
+                        <label for="screen-file" class="form__label">
+                            <input
+                                id="sreen-file"
+                                type="file"
+                                class="form__file"
+                                name="images"
+                                required
+                                multiple
+                                accept="image/png, image/gif, image/jpeg"
+                            />
+
+                            <div class="file__text-block">
+                                <img
+                                    src="img/icons/img-placeholder.svg"
+                                    alt=""
+                                />
+                                <p>
+                                    Загрузите одно или несколько изображений или
+                                    перетащите сюда
+                                </p>
+                            </div>
+                        </label>
+
+                        <div class="file__controls">
+                            <button
+                                type="button"
+                                class="btn btn--sm btn--dark file__btn-add"
+                            >
+                                <svg
+                                    width="8"
+                                    height="16"
+                                    viewBox="0 0 8 16"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M6.99984 3.99999V11.6667C6.99984 13.14 5.8065 14.3333 4.33317 14.3333C2.85984 14.3333 1.6665 13.14 1.6665 11.6667V3.33332C1.6665 2.41332 2.41317 1.66666 3.33317 1.66666C4.25317 1.66666 4.99984 2.41332 4.99984 3.33332V10.3333C4.99984 10.7 4.69984 11 4.33317 11C3.9665 11 3.6665 10.7 3.6665 10.3333V3.99999H2.6665V10.3333C2.6665 11.2533 3.41317 12 4.33317 12C5.25317 12 5.99984 11.2533 5.99984 10.3333V3.33332C5.99984 1.85999 4.8065 0.666656 3.33317 0.666656C1.85984 0.666656 0.666504 1.85999 0.666504 3.33332V11.6667C0.666504 13.6933 2.3065 15.3333 4.33317 15.3333C6.35984 15.3333 7.99984 13.6933 7.99984 11.6667V3.99999H6.99984Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                                Прикрепить файлы
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn--sm btn--dark file__btn-bufer"
+                            >
+                                Вставить из буфера обмена
+                            </button>
+
+                            <div class="file__tip">
+                                или нажмите
+                                <span class="highlight">Ctrl</span>
+                                +
+                                <span class="highlight">V</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form__group form__group--captcha">
+                    <p>Подтвердите, что вы не робот</p>
+                    <label for="screen-captcha" class="form__label">
+                        <input
+                            id="screen-captcha"
+                            type="checkbox"
+                            class="form__check"
+                            name="captcha"
+                            required
+                        />
+                        <span class="form__check-field"></span>
+
+                        <span class="form__check-text">Я не робот</span>
+                    </label>
+                </div>
+
+                <div class="form__group form__group--btn">
+                    <button
+                        type="submit"
+                        class="btn btn--md btn--orange form__btn"
+                    >
+                        Оставить
+                    </button>
+
+                    <label for="screen-confirm" class="form__label">
+                        <input
+                            id="screen-confirm"
+                            type="checkbox"
+                            class="form__check"
+                            name="confirm"
+                            required
+                        />
+                        <span class="form__check-field"></span>
+
+                        <span class="form__check-text"
+                            >Я согласен на обработку своих персональных
+                            данных</span
+                        >
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

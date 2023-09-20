@@ -1,0 +1,149 @@
+<div class="modal modal--consult">
+    <div class="modal__inner">
+        <button class="modal__close">
+            <img src="img/icons/close.svg" alt="закрыть" />
+        </button>
+        <header class="modal__header">
+            <h2 class="modal__title">Заявка на консультацию</h2>
+            <p class="modal__subtitle">Оставьте заявку и мы свяжемся с вами</p>
+        </header>
+        <div class="modal__content">
+            <form action="/" method="post" class="form form--consult">
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="text"
+                        class="form__input"
+                        name="name"
+                        placeholder="*Ваше имя"
+                        required
+                    />
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="tel"
+                        class="form__input"
+                        name="tel"
+                        placeholder="*Телефон для связи"
+                        required
+                    />
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="email"
+                        class="form__input"
+                        name="email"
+                        placeholder="*E-mail"
+                        required
+                    />
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="number"
+                        class="form__input"
+                        name="INN"
+                        placeholder="*ИНН организации"
+                        required
+                    />
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="text"
+                        class="form__input"
+                        name="program-name"
+                        placeholder="Название программы"
+                        required
+                    />
+
+                    <a
+                        href="http://wiki.tlink.ru/ru/%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8/%D0%9A%D0%B0%D0%BA%D0%A3%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9%D0%9D%D0%BE%D0%BC%D0%B5%D1%80%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B1%D0%A1"
+                        class="form__link"
+                    >
+                        Как посмотреть название программы
+                    </a>
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="text"
+                        class="form__input"
+                        name="program-name"
+                        placeholder="Название программы"
+                        required
+                    />
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="number"
+                        class="form__input"
+                        name="reg-number"
+                        placeholder="*Регистрационный номер программы 1С"
+                        required
+                    />
+
+                    <a
+                        href="http://wiki.tlink.ru/ru/%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8/%D0%9A%D0%B0%D0%BA_%D0%9D%D0%B0%D0%B9%D1%82%D0%B8_%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8_%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B  "
+                        class="form__link"
+                    >
+                        Как найти регистрационный номер программы 1С
+                    </a>
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <textarea
+                        name="question"
+                        class="form__textarea"
+                        placeholder="*Опишите ваш вопрос"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form__group form__group--captcha">
+                    <p>Подтвердите, что вы не робот</p>
+                    <label for="consult-captcha" class="form__label">
+                        <input
+                            id="consult-captcha"
+                            type="checkbox"
+                            class="form__check"
+                            name="captcha"
+                            required
+                        />
+                        <span class="form__check-field"></span>
+
+                        <span class="form__check-text">Я не робот</span>
+                    </label>
+                </div>
+
+                <div class="form__group form__group--btn">
+                    <button
+                        type="submit"
+                        class="btn btn--md btn--orange form__btn"
+                    >
+                        Оставить заявку
+                    </button>
+
+                    <label for="consult-confirm" class="form__label">
+                        <input
+                            id="consult-confirm"
+                            type="checkbox"
+                            class="form__check"
+                            name="confirm"
+                            required
+                        />
+                        <span class="form__check-field"></span>
+
+                        <span class="form__check-text"
+                            >Я согласен на обработку своих персональных
+                            данных</span
+                        >
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

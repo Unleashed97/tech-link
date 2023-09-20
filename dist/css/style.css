@@ -349,6 +349,7 @@ html {
 }
 
 body {
+  width: 100%;
   font-family: "Gilroy", sans-serif;
   font-size: 1.6rem;
   background-color: #efeff1;
@@ -392,6 +393,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   margin: 0;
   padding: 0;
   font-family: "Gilroy", sans-serif;
@@ -399,6 +401,13 @@ main {
   background: none;
   cursor: pointer;
   transition: 0.3s linear;
+}
+.btn--sm {
+  padding: 14px 21px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 100px;
 }
 .btn--md {
   padding: 20px 57px;
@@ -412,6 +421,12 @@ main {
 }
 .btn--orange:hover {
   background-color: #ca5a08;
+}
+.btn--dark {
+  background-color: #4a4a4a;
+}
+.btn--dark:hover {
+  background-color: #707070;
 }
 
 .container {
@@ -776,31 +791,96 @@ main {
 
 .modal {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
   z-index: 20;
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
   display: none;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.3764705882);
+  overflow-y: auto;
+  margin: auto 0;
+}
+@media (max-width: 576px) {
+  .modal {
+    align-items: flex-start;
+  }
 }
 .modal.active {
   display: flex;
 }
 .modal__inner {
   position: relative;
-  width: 30%;
-  padding: 15px;
+  max-width: 860px;
+  width: 100%;
+  padding: 70px;
   background-color: #fff;
   border-radius: 10px;
+  box-shadow: 0 0 58px rgba(0, 0, 0, 0.05);
+  margin: auto;
+  overflow: auto;
+}
+@media (max-width: 576px) {
+  .modal__inner {
+    padding: 26px 14px 30px;
+  }
 }
 .modal__close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 38px;
+  right: 39px;
   margin: 0;
   padding: 0;
   border: 0;
   background: none;
+  cursor: pointer;
+}
+.modal__close img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 576px) {
+  .modal__close {
+    top: 18px;
+    right: 14px;
+    width: 14px;
+    height: 14px;
+  }
+}
+.modal__header {
+  margin-bottom: 13px;
+}
+@media (max-width: 576px) {
+  .modal__header {
+    margin-bottom: 30px;
+  }
+}
+.modal__title {
+  margin-bottom: 8px;
+  font-size: 2.6rem;
+  font-weight: 600;
+  line-height: 3.6rem;
+}
+@media (max-width: 576px) {
+  .modal__title {
+    margin-bottom: 0;
+    font-size: 2rem;
+  }
+}
+.modal__subtitle {
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  font-weight: 500;
+  color: #989898;
+}
+@media (max-width: 576px) {
+  .modal__subtitle {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
 }
 
 .section {
@@ -866,7 +946,13 @@ main {
   flex-direction: column;
   gap: 10px;
 }
-.form__input {
+.form__group--captcha {
+  margin-top: 31px;
+}
+.form__group--captcha p {
+  margin-bottom: 16px;
+}
+.form__input, .form__textarea {
   width: 100%;
   padding: 21px 21px;
   font-family: "Gilroy", sans-serif;
@@ -876,7 +962,7 @@ main {
   border-radius: 5px;
   background-color: #ccc;
 }
-.form__input::placeholder {
+.form__input::placeholder, .form__textarea::placeholder {
   font-family: "Gilroy", sans-serif;
   font-size: 1.8rem;
   color: #515151;
@@ -910,6 +996,263 @@ main {
   max-width: 57px;
   height: 44px;
   border-radius: 8px;
+}
+.form--consult, .form--screen {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form--consult .form__group p, .form--screen .form__group p {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+.form--consult .form__group.error .form__error, .form--screen .form__group.error .form__error {
+  opacity: 1;
+}
+.form--consult .form__input,
+.form--consult .form__textarea, .form--screen .form__input,
+.form--screen .form__textarea {
+  padding: 21px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #4a4a4a;
+  border: 1px solid transparent;
+  background-color: #f3f3f3;
+  outline: 0;
+}
+.form--consult .form__input::placeholder,
+.form--consult .form__textarea::placeholder, .form--screen .form__input::placeholder,
+.form--screen .form__textarea::placeholder {
+  font-size: 1.8rem;
+  color: rgba(81, 81, 81, 0.6);
+}
+@media (max-width: 576px) {
+  .form--consult .form__input,
+  .form--consult .form__textarea, .form--screen .form__input,
+  .form--screen .form__textarea {
+    font-size: 1.6rem;
+  }
+  .form--consult .form__input::placeholder,
+  .form--consult .form__textarea::placeholder, .form--screen .form__input::placeholder,
+  .form--screen .form__textarea::placeholder {
+    font-size: 1.6rem;
+  }
+}
+.form--consult .form__textarea, .form--screen .form__textarea {
+  width: 100%;
+  min-width: 100%;
+  min-height: 134px;
+  resize: none;
+}
+.form--consult .form__error, .form--screen .form__error {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.6rem;
+  color: #f64229;
+  opacity: 0;
+  transition: 0.3s linear;
+}
+@media (max-width: 576px) {
+  .form--consult .form__error, .form--screen .form__error {
+    margin-bottom: 3px;
+    font-size: 1.2rem;
+  }
+}
+.form--consult .form__link, .form--screen .form__link {
+  display: block;
+  margin-top: 16px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #f67f29;
+  text-decoration: underline;
+}
+.form--consult .form__label, .form--screen .form__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 143px;
+  height: 61px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+}
+.form--consult .form__check, .form--screen .form__check {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.form--consult .form__check-text, .form--screen .form__check-text {
+  font-size: 1.4rem;
+  color: #989898;
+}
+.form--consult .form__check-field, .form--screen .form__check-field {
+  position: relative;
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: 0.3s linear;
+}
+.form--consult .form__check:checked ~ .form__check-field, .form--screen .form__check:checked ~ .form__check-field {
+  background-color: #f67f29;
+}
+.form--consult .form__check:checked ~ .form__check-field:after, .form--screen .form__check:checked ~ .form__check-field:after {
+  display: block;
+}
+.form--consult .form__check-field::after, .form--screen .form__check-field::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 11px;
+  top: 5px;
+  width: 10px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.form--consult .form__group--btn, .form--screen .form__group--btn {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+@media (max-width: 576px) {
+  .form--consult .form__group--btn, .form--screen .form__group--btn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+.form--consult .form__group--btn .form__label, .form--screen .form__group--btn .form__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  width: 210px;
+  height: auto;
+  border-radius: 0;
+  background: none;
+}
+.form--consult .form__group--btn .form__check, .form--screen .form__group--btn .form__check {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.form--consult .form__group--btn .form__check-text, .form--screen .form__group--btn .form__check-text {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #989898;
+}
+.form--consult .form__group--btn .form__check-field, .form--screen .form__group--btn .form__check-field {
+  flex-shrink: 0;
+  position: relative;
+  display: block;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border-radius: 0;
+  border: 1px solid #989898;
+  transition: 0.3s linear;
+}
+.form--consult .form__group--btn .form__check:checked ~ .form__check-field, .form--screen .form__group--btn .form__check:checked ~ .form__check-field {
+  background-color: #f67f29;
+  border-color: #f67f29;
+}
+.form--consult .form__group--btn .form__check:checked ~ .form__check-field:after, .form--screen .form__group--btn .form__check:checked ~ .form__check-field:after {
+  display: block;
+}
+.form--consult .form__group--btn .form__check-field::after, .form--screen .form__group--btn .form__check-field::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 4px;
+  top: 1px;
+  width: 8px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.form .file .form__label {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 162px;
+  border: 1px solid #c5c5c5;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.form .file .form__file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  font-size: 0;
+  cursor: pointer;
+}
+.form .file .file__text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.form .file .file__text-block img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.form .file .file__text-block p {
+  font-size: 1.6rem;
+  color: #9f9f9f;
+  text-align: center;
+}
+@media (max-width: 576px) {
+  .form .file .file__text-block p {
+    font-size: 1.4rem;
+  }
+}
+.form .file__controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-top: 20px;
+}
+.form .file .file__tip {
+  margin-left: 22px;
+  font-size: 1.4rem;
+}
+@media (max-width: 800px) {
+  .form .file .file__tip {
+    display: none;
+  }
+}
+.form .file .file__tip .highlight {
+  padding: 7px 15px;
+  font-size: 1.4rem;
+  color: #fff;
+  border-radius: 6px;
+  background-color: #f67f29;
+}
+.form--screen {
+  gap: 20px;
+}
+.form--screen .form__textarea {
+  min-height: 175px;
 }
 
 .socials {

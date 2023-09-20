@@ -16,17 +16,282 @@
     <body>
         <div class="wrapper">
             <!-- modal include -->
-            <div class="modal">
+            <div class="modal modal--consult">
     <div class="modal__inner">
         <button class="modal__close">
-            <img src="img/icons/close.svg" alt="закрыть">
+            <img src="img/icons/close.svg" alt="закрыть" />
         </button>
-        <h2 class="modal_title">Modal Title</h2>
+        <header class="modal__header">
+            <h2 class="modal__title">Заявка на консультацию</h2>
+            <p class="modal__subtitle">Оставьте заявку и мы свяжемся с вами</p>
+        </header>
         <div class="modal__content">
-            modal content
+            <form action="/" method="post" class="form form--consult">
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="text"
+                        class="form__input"
+                        name="name"
+                        placeholder="*Ваше имя"
+                        required
+                    />
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="tel"
+                        class="form__input"
+                        name="tel"
+                        placeholder="*Телефон для связи"
+                        required
+                    />
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="email"
+                        class="form__input"
+                        name="email"
+                        placeholder="*E-mail"
+                        required
+                    />
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="number"
+                        class="form__input"
+                        name="INN"
+                        placeholder="*ИНН организации"
+                        required
+                    />
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="text"
+                        class="form__input"
+                        name="program-name"
+                        placeholder="Название программы"
+                        required
+                    />
+
+                    <a
+                        href="http://wiki.tlink.ru/ru/%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8/%D0%9A%D0%B0%D0%BA%D0%A3%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%D0%A0%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9%D0%9D%D0%BE%D0%BC%D0%B5%D1%80%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B1%D0%A1"
+                        class="form__link"
+                    >
+                        Как посмотреть название программы
+                    </a>
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="text"
+                        class="form__input"
+                        name="program-name"
+                        placeholder="Название программы"
+                        required
+                    />
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <input
+                        type="number"
+                        class="form__input"
+                        name="reg-number"
+                        placeholder="*Регистрационный номер программы 1С"
+                        required
+                    />
+
+                    <a
+                        href="http://wiki.tlink.ru/ru/%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8/%D0%9A%D0%B0%D0%BA_%D0%9D%D0%B0%D0%B9%D1%82%D0%B8_%D0%9D%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D0%B8_%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B  "
+                        class="form__link"
+                    >
+                        Как найти регистрационный номер программы 1С
+                    </a>
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <textarea
+                        name="question"
+                        class="form__textarea"
+                        placeholder="*Опишите ваш вопрос"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form__group form__group--captcha">
+                    <p>Подтвердите, что вы не робот</p>
+                    <label for="consult-captcha" class="form__label">
+                        <input
+                            id="consult-captcha"
+                            type="checkbox"
+                            class="form__check"
+                            name="captcha"
+                            required
+                        />
+                        <span class="form__check-field"></span>
+
+                        <span class="form__check-text">Я не робот</span>
+                    </label>
+                </div>
+
+                <div class="form__group form__group--btn">
+                    <button
+                        type="submit"
+                        class="btn btn--md btn--orange form__btn"
+                    >
+                        Оставить заявку
+                    </button>
+
+                    <label for="consult-confirm" class="form__label">
+                        <input
+                            id="consult-confirm"
+                            type="checkbox"
+                            class="form__check"
+                            name="confirm"
+                            required
+                        />
+                        <span class="form__check-field"></span>
+
+                        <span class="form__check-text"
+                            >Я согласен на обработку своих персональных
+                            данных</span
+                        >
+                    </label>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
+            <!-- modal include -->
+            <div class="modal modal--screen active">
+    <div class="modal__inner">
+        <button class="modal__close">
+            <img src="img/icons/close.svg" alt="закрыть" />
+        </button>
+        <header class="modal__header">
+            <h2 class="modal__title">Отправка снимка из буфера</h2>
+        </header>
+        <div class="modal__content">
+            <form action="/" method="post" class="form form--screen">
+                <div class="form__group">
+                    <p>Добавьте комментарий к снимку</p>
+                    <textarea
+                        name="comment"
+                        class="form__textarea"
+                        placeholder="Добавьте комментарий к снимку"
+                    ></textarea>
+                </div>
+                <div class="form__group">
+                    <span class="form__error">Заполните поле</span>
+                    <div class="file">
+                        <label for="screen-file" class="form__label">
+                            <input
+                                id="sreen-file"
+                                type="file"
+                                class="form__file"
+                                name="images"
+                                required
+                                multiple
+                                accept="image/png, image/gif, image/jpeg"
+                            />
+
+                            <div class="file__text-block">
+                                <img
+                                    src="img/icons/img-placeholder.svg"
+                                    alt=""
+                                />
+                                <p>
+                                    Загрузите одно или несколько изображений или
+                                    перетащите сюда
+                                </p>
+                            </div>
+                        </label>
+
+                        <div class="file__controls">
+                            <button
+                                type="button"
+                                class="btn btn--sm btn--dark file__btn-add"
+                            >
+                                <svg
+                                    width="8"
+                                    height="16"
+                                    viewBox="0 0 8 16"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M6.99984 3.99999V11.6667C6.99984 13.14 5.8065 14.3333 4.33317 14.3333C2.85984 14.3333 1.6665 13.14 1.6665 11.6667V3.33332C1.6665 2.41332 2.41317 1.66666 3.33317 1.66666C4.25317 1.66666 4.99984 2.41332 4.99984 3.33332V10.3333C4.99984 10.7 4.69984 11 4.33317 11C3.9665 11 3.6665 10.7 3.6665 10.3333V3.99999H2.6665V10.3333C2.6665 11.2533 3.41317 12 4.33317 12C5.25317 12 5.99984 11.2533 5.99984 10.3333V3.33332C5.99984 1.85999 4.8065 0.666656 3.33317 0.666656C1.85984 0.666656 0.666504 1.85999 0.666504 3.33332V11.6667C0.666504 13.6933 2.3065 15.3333 4.33317 15.3333C6.35984 15.3333 7.99984 13.6933 7.99984 11.6667V3.99999H6.99984Z"
+                                        fill="white"
+                                    />
+                                </svg>
+                                Прикрепить файлы
+                            </button>
+                            <button
+                                type="button"
+                                class="btn btn--sm btn--dark file__btn-bufer"
+                            >
+                                Вставить из буфера обмена
+                            </button>
+
+                            <div class="file__tip">
+                                или нажмите
+                                <span class="highlight">Ctrl</span>
+                                +
+                                <span class="highlight">V</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form__group form__group--captcha">
+                    <p>Подтвердите, что вы не робот</p>
+                    <label for="screen-captcha" class="form__label">
+                        <input
+                            id="screen-captcha"
+                            type="checkbox"
+                            class="form__check"
+                            name="captcha"
+                            required
+                        />
+                        <span class="form__check-field"></span>
+
+                        <span class="form__check-text">Я не робот</span>
+                    </label>
+                </div>
+
+                <div class="form__group form__group--btn">
+                    <button
+                        type="submit"
+                        class="btn btn--md btn--orange form__btn"
+                    >
+                        Оставить
+                    </button>
+
+                    <label for="screen-confirm" class="form__label">
+                        <input
+                            id="screen-confirm"
+                            type="checkbox"
+                            class="form__check"
+                            name="confirm"
+                            required
+                        />
+                        <span class="form__check-field"></span>
+
+                        <span class="form__check-text"
+                            >Я согласен на обработку своих персональных
+                            данных</span
+                        >
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
             <!-- header include -->
             <header class="header">
@@ -114,7 +379,8 @@
 
                                     <button
                                         type="button"
-                                        class="btn btn--orange btn--md card__btn"
+                                        data-target="modal--consult"
+                                        class="btn btn--orange btn--md card__btn modal-open-btn"
                                     >
                                         Оставить заявку
                                     </button>
@@ -134,7 +400,8 @@
 
                                     <button
                                         type="button"
-                                        class="btn btn--orange btn--md card__btn"
+                                        data-target="modal--screen"
+                                        class="btn btn--orange btn--md card__btn modal-open-btn"
                                     >
                                         <img
                                             src="img/icons/clip-btn.svg"
@@ -149,33 +416,6 @@
                         </div>
                     </div>
                 </section>
-
-                <!-- form -->
-                <form action="/" class="form" method="post">
-                    <h2 class="form__title">From title</h2>
-                    <div class="form__group">
-                        <input
-                            type="text"
-                            name="name"
-                            class="form__input"
-                            placeholder="Имя"
-                            required
-                        />
-                    </div>
-                    <div class="form__group">
-                        <input
-                            type="tel"
-                            name="tel"
-                            class="form__input"
-                            placeholder="Телефон"
-                            required
-                        />
-                    </div>
-
-                    <button type="submit" class="btn btn--blue form__btn">
-                        Заказать звонок
-                    </button>
-                </form>
             </main>
             <!-- footer include -->
             <footer class="footer">

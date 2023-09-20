@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 4px;
 
     margin: 0;
     padding: 0;
@@ -13,6 +14,16 @@
     cursor: pointer;
 
     transition: 0.3s linear;
+
+    &--sm {
+        padding: 14px 21px;
+
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #fff;
+
+        border-radius: 100px;
+    }
 
     &--md {
         padding: 20px 57px;
@@ -29,6 +40,14 @@
 
         &:hover {
             background-color: darken($colors-highlight, 15%);
+        }
+    }
+
+    &--dark {
+        background-color: $colors-secondary;
+
+        &:hover {
+            background-color: lighten($colors-secondary, 15%);
         }
     }
 }
